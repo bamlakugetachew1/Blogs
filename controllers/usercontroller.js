@@ -27,10 +27,11 @@ exports.loginuser = async (req, res) => {
       const validate = await bcrypt.compare(req.body.password, user.password);
       if (validate) {
         const accessToken = jwt.sign(  { user: user },  process.env.SecretToken, { expiresIn: "1d",});
-        res.cookie("token", {accessToken:accessToken}).json({
+         res.json({
           message: "success",
           userid: user._id,
           username:user.username,
+          accessToken:accessToken
         });
       } else {
         res.json({
