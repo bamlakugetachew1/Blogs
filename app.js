@@ -6,7 +6,7 @@ const cookieParser = require("cookie-parser");
 const userroutes = require("./routes/userroutes");
 const postroutes = require("./routes/postroute");
 const app = express();
-app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
+app.use(cors({ credentials: true, origin: "https://blogethiopia.netlify.app" }));
 app.use(cookieParser());
 app.use(express.json());
 app.use(
