@@ -9,6 +9,7 @@ const app = express();
 app.use(cors({ credentials: true, origin: "https://blogethiopia.netlify.app" }));
 app.use(cookieParser());
 app.use(express.json());
+app.use(express.static(__dirname));
 app.use(
   helmet({
     crossOriginResourcePolicy: false,
